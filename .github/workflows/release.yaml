@@ -20,7 +20,7 @@ jobs:
       - name: Set env
         run:  echo "RELEASE_TAG=${GITHUB_REF:10}" >> $GITHUB_ENV
       - name: checkout code
-        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # tag=v3.3.0
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # tag=v4.1.7
         with:
           fetch-depth: 0
       - name: Install go
@@ -53,7 +53,7 @@ jobs:
       - name: Set env
         run:  echo "RELEASE_TAG=${GITHUB_REF:10}" >> $GITHUB_ENV
       - name: checkout code
-        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # tag=v3.3.0
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # tag=v4.1.7
         with:
           fetch-depth: 0
       - name: Install go
