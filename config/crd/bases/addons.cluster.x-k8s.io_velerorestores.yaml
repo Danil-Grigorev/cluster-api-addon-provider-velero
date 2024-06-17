@@ -306,7 +306,7 @@ spec:
               itemOperationTimeout:
                 description: |-
                   ItemOperationTimeout specifies the time used to wait for RestoreItemAction operations
-                  The default value is 1 hour.
+                  The default value is 4 hour.
                 type: string
               labelSelector:
                 description: |-
@@ -486,14 +486,16 @@ spec:
                 description: UploaderConfig specifies the configuration for the restore.
                 nullable: true
                 properties:
+                  parallelFilesDownload:
+                    description: ParallelFilesDownload is the concurrency number setting
+                      for restore.
+                    type: integer
                   writeSparseFiles:
                     description: WriteSparseFiles is a flag to indicate whether write
                       files sparsely or not.
                     nullable: true
                     type: boolean
                 type: object
-            required:
-            - backupName
             type: object
           status:
             description: VeleroRestoreStatus defines the observed state of VeleroRestore
@@ -547,6 +549,8 @@ spec:
                       - Completed
                       - PartiallyFailed
                       - Failed
+                      - Finalizing
+                      - FinalizingPartiallyFailed
                       type: string
                     progress:
                       description: |-

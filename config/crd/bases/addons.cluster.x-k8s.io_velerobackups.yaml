@@ -379,7 +379,7 @@ spec:
               itemOperationTimeout:
                 description: |-
                   ItemOperationTimeout specifies the time used to wait for asynchronous BackupItemAction operations
-                  The default value is 1 hour.
+                  The default value is 4 hour.
                 type: string
               labelSelector:
                 description: |-
